@@ -1,9 +1,10 @@
 <script>
 import AppButton from "./AppButton.vue";
 import AppHero from "./AppHero.vue";
+import NavBadge from "./NavBadge.vue";
 
 export default {
-  components: { AppButton, AppHero },
+  components: { AppButton, AppHero, NavBadge },
 
   props: {
     button: Object,
@@ -49,7 +50,10 @@ export default {
                 class="me-5"
                 :class="link.active ? 'active' : ''"
               >
-                <a :href="link.href">{{ link.linkName }}</a>
+                <!-- text -->
+                <a :href="link.href" class="me-1">{{ link.linkName }}</a>
+                <!-- badge -->
+                <NavBadge :badge="link.badge" v-if="link.badge" />
               </li>
               <!-- button link -->
               <li>
@@ -60,6 +64,8 @@ export default {
         </div>
       </div>
     </nav>
+
+    <!-- App hero section -->
     <AppHero />
   </header>
 </template>
