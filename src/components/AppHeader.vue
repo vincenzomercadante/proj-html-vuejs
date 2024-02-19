@@ -1,5 +1,9 @@
 <script>
+import AppButton from "./AppButton.vue";
+
 export default {
+  components: { AppButton },
+
   props: {
     button: Object,
     links: Array,
@@ -15,7 +19,9 @@ export default {
 </script>
 
 <template>
+  <!-- header -->
   <header>
+    <!-- site-intro section -->
     <section>
       <div class="container">
         <span>We have a 95% Successful Pass Rate!</span>
@@ -25,29 +31,34 @@ export default {
         </div>
       </div>
     </section>
-    <section>
-      <nav>
-        <div class="container">
-          <div class="row">
-            <div class="col-3">
-              <img :src="generateUrl(logo)" alt="" />
-            </div>
-            <div class="col-7">
-              <ul>
-                <li
-                  v-for="link in links"
-                  class="me-5"
-                  :class="link.active ? 'active' : ''"
-                >
-                  <a :href="link.href">{{ link.linkName }}</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-2"></div>
+    <!-- navbar -->
+    <nav>
+      <div class="container">
+        <div class="row">
+          <!-- site logo col -->
+          <div class="col-3">
+            <img :src="generateUrl(logo)" alt="" />
+          </div>
+          <!-- nav links col -->
+          <div class="col-9">
+            <ul>
+              <!-- text links -->
+              <li
+                v-for="link in links"
+                class="me-5"
+                :class="link.active ? 'active' : ''"
+              >
+                <a :href="link.href">{{ link.linkName }}</a>
+              </li>
+              <!-- button link -->
+              <li>
+                <AppButton :button="button" />
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
-    </section>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -56,12 +67,9 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 header {
-  min-height: 750px;
-  background: transparent
-    url("../assets/img/backgrounds/homepage-hero-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: fixed;
+  left: 0;
+  right: 0;
 
   section:first-child {
     padding: 10px 0;
@@ -79,7 +87,7 @@ header {
     background-color: rgba($color: #333, $alpha: 0.5);
     @include center-vertically;
 
-    .col-7 {
+    .col-9 {
       @include center-vertically;
       justify-content: center;
       text-transform: uppercase;

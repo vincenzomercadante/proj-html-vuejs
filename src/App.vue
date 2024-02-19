@@ -50,6 +50,7 @@ export default {
         button: {
           text: "book now",
           href: "#",
+          type: "primary",
         },
       },
     };
