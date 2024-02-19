@@ -9,7 +9,9 @@ export default {
 </script>
 
 <template>
-  <div class="btn-custom" :class="button.type">{{ button.text }}</div>
+  <a class="btn-custom" :class="button.type" :href="button.href">{{
+    button.text
+  }}</a>
 </template>
 
 <style lang="scss" scoped>
@@ -21,6 +23,7 @@ export default {
   border: 5px solid $primary-color;
   color: $secondary-color;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   transition: background-color 0.3s ease-in-out;

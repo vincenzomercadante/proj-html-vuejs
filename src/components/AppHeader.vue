@@ -98,7 +98,7 @@ header {
 
     .col-9 {
       @include center-vertically;
-      justify-content: center;
+      justify-content: flex-end;
       text-transform: uppercase;
       color: $secondary-color;
       font-weight: bold;
