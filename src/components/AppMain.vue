@@ -2,6 +2,8 @@
 export default {};
 </script>
 
-<template></template>
+<template>
+  <main></main>
+</template>
 
 <style lang="scss" scoped></style>

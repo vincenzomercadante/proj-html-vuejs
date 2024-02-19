@@ -1,8 +1,9 @@
 <script>
 import AppButton from "./AppButton.vue";
+import AppHero from "./AppHero.vue";
 
 export default {
-  components: { AppButton },
+  components: { AppButton, AppHero },
 
   props: {
     button: Object,
@@ -59,6 +60,7 @@ export default {
         </div>
       </div>
     </nav>
+    <AppHero />
   </header>
 </template>
 
@@ -67,9 +69,10 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 header {
-  position: fixed;
-  left: 0;
-  right: 0;
+  background-image: url("../assets/img/backgrounds/homepage-hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 800px;
 
   section:first-child {
     padding: 10px 0;
