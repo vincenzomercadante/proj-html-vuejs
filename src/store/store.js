@@ -46,5 +46,44 @@ export const store = reactive({
         title: "ACCIDENT RATE",
       },
     ],
+
+    instructorsCards: [
+      {
+        type: "normal-card",
+        argument: "instructor",
+        img: "../assets/img/instructors/instructor-mikehart-400x254.jpg",
+        socials: [
+          "fa-brands fa-facebook-f",
+          "fa-brands fa-x-twitter",
+          "fa-brands fa-instagram",
+        ],
+        title: "Mike Hart",
+        text: "lorem ipsum dolor sit amet, consectetur adiscipling elit.",
+      },
+      {
+        type: "normal-card",
+        argument: "instructor",
+        img: "../assets/img/instructors/instructor-johnsmith-400x254.jpg",
+        socials: [
+          "fa-brands fa-facebook-f",
+          "fa-brands fa-x-twitter",
+          "fa-brands fa-instagram",
+        ],
+        title: "John Smith",
+        text: "lorem ipsum dolor sit amet, consectetur adiscipling elit.",
+      },
+      {
+        type: "normal-card",
+        argument: "instructor",
+        img: "../assets/img/instructors/instructor-angelahart-400x254.jpg",
+        socials: [
+          "fa-brands fa-facebook-f",
+          "fa-brands fa-x-twitter",
+          "fa-brands fa-instagram",
+        ],
+        title: "Angela",
+        text: "lorem ipsum dolor sit amet, consectetur adiscipling elit.",
+      },
+    ],
   },
 });

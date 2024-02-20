@@ -24,7 +24,7 @@ export default {
           href: "#",
           type: "primary",
         },
-        moreAboutUs: {
+        moreBlog: {
           text: "more from the blog",
           href: "#",
           type: "primary",
@@ -184,8 +184,33 @@ export default {
     <!-- rating -->
     <section class="rating">
       <div class="container">
-        <div class="row">
+        <div class="row gx-3">
           <div class="col-4" v-for="card in store.mainCard.ratingCards">
+            <AppCard :card="card" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- your instructors -->
+    <section class="instructors">
+      <div class="container">
+        <h2 class="section-title">Your instructors</h2>
+        <div class="row">
+          <div class="col-9">
+            <p class="txt-big">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+              nulla ullam fugit officia consequatur aut molestias, perferendis,
+              accusamus obcaecati sit beatae autem cumque vel maiores porro,
+              tempora quisquam soluta nesciunt.
+            </p>
+          </div>
+          <div class="col-3 text-center">
+            <AppButton :button="mainContent.moreAboutUs" />
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-4" v-for="card in store.mainCard.instructorsCards">
             <AppCard :card="card" />
           </div>
         </div>
@@ -218,15 +243,14 @@ main {
     background-color: $secondary-color;
     box-shadow: $card-box-shadow;
   }
+  .txt-big {
+    font-size: 1.5rem;
+  }
 
   // first lesson sessione
   .first-lesson {
     padding: 100px 0 150px 0;
     position: relative;
-
-    .txt-big {
-      font-size: 1.5rem;
-    }
 
     .form {
       margin-left: 70px;
@@ -332,10 +356,8 @@ main {
 
 .rating {
   position: relative;
-
-  .col-4 {
-    border-radius: 10px;
-    box-shadow: $card-box-shadow;
-  }
+  top: -120px;
+  display: flex;
+  justify-content: center;
 }
 </style>

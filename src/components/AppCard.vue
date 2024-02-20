@@ -23,18 +23,40 @@ export default {
 </script>
 
 <template>
-  <div :class="card.type">
+  <div :class="[card.type, card.argument]" class="card-gen">
+    <!-- card img -->
     <img
       v-if="card.img"
       :src="generateUrl(card.img)"
       :alt="card.argument + 'image'"
-      class="mb-3"
+      class="mb-3 img-fluid"
     />
+
+    <!-- card progress bar -->
     <div v-else class="progress-bar" :style="progressValue(card.rate)">
       <div class="progress">{{ card.rate }}%</div>
     </div>
-    <h4>{{ card.title }}</h4>
 
+    <!-- card title -->
+    <h4 :class="card.argument == 'instructor' ? 'name' : ''">
+      {{ card.title }}
+    </h4>
+
+    <!-- social icon div -->
+    <div class="socials" v-if="card.socials">
+      <font-awesome-icon
+        v-for="social in card.socials"
+        :icon="social"
+        class="me-3"
+      />
+    </div>
+
+    <!-- card text -->
+    <p v-if="card.text">
+      {{ card.text }}
+    </p>
+
+    <!-- card button -->
     <AppButton v-if="card.argument == 'course'" :button="card.button" />
   </div>
 </template>
@@ -42,7 +64,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
-div {
+.card-gen {
   @include center-vertically;
   flex-direction: column;
 
@@ -51,24 +73,20 @@ div {
     font-weight: bold;
   }
 
-  progress {
-    border-radius: 50%;
-    aspect-ratio: 1;
-  }
-
   &.normal-card {
     padding: 2rem 3rem;
     justify-content: center;
+    text-align: center;
     border-radius: 10px;
     background-color: $secondary-color;
-    box-shadow: 0px -8px 0px 0px $primary-color;
+    box-shadow: 0px -8px 0px 0px $primary-color, $card-box-shadow;
 
     .progress-bar {
       position: relative;
       @include center-vertically;
       justify-content: center;
-      background: conic-gradient($primary-color 0, #f6f6f6 0);
-      width: 100%;
+      background: conic-gradient($primary-color, #f6f6f6 0);
+      width: 80%;
       aspect-ratio: 1;
       border-radius: 50%;
       margin-bottom: 2rem;
@@ -89,6 +107,31 @@ div {
     h4 {
       color: $txt-color;
       font-size: 1.2rem;
+
+      &.name {
+        font-size: 1.7rem;
+        color: $title-txt-color;
+        margin-top: 2rem;
+      }
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      color: $txt-color;
+    }
+
+    p {
+      padding: 1rem 2rem;
+      color: $txt-color;
+      font-size: 1.1rem;
+    }
+
+    img {
+      transition: box-shadow 0.5s ease-out;
+    }
+    &.instructor:hover img {
+      box-shadow: 0px 0px 20px 0px #000000;
     }
   }
 }
