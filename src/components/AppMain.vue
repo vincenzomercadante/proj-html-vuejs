@@ -51,7 +51,7 @@ export default {
         <div class="row">
           <div class="col-6">
             <!-- section title -->
-            <h3>Get Behind The Wheel</h3>
+            <h3 class="section-title">Get Behind The Wheel</h3>
             <!-- section subtitle -->
             <p class="txt-big">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores,
@@ -116,11 +116,29 @@ export default {
         </div>
       </div>
     </section>
+
+    <section class="start-now">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h2>Start Learning to Drive Today</h2>
+            <h3>Give us a call to schedule your first driving lesson</h3>
+          </div>
+          <div class="col-4">
+            <div>
+              <font-awesome-icon icon="fa-solid fa-phone-flip" class="me-3" />
+              1-800-555-555
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
 
 main {
   background-color: #fff;
@@ -130,11 +148,13 @@ main {
     color: $txt-color;
   }
 
-  section h3 {
+  .section-title {
     color: $title-txt-color;
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
+
+  // first lesson sessione
   .first-lesson {
     padding: 100px 0 150px 0;
     position: relative;
@@ -144,6 +164,7 @@ main {
     }
 
     .form-card {
+      margin-left: 70px;
       padding: 3rem 2rem;
       position: absolute;
       top: -50px;
@@ -173,6 +194,28 @@ main {
         border-radius: 5px;
         color: $input-color;
         background-color: $input-bg;
+      }
+    }
+  }
+  // start now section
+  .start-now {
+    background-image: url(../assets/img/backgrounds/horizontal-cta-background.jpg);
+    background-size: cover;
+    color: $secondary-color;
+    .container {
+      padding: 50px 0;
+      font-weight: bold;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      .col-4 {
+        text-align: right;
+        font-size: 2rem;
+        font-weight: normal;
+        @include center-vertically;
+        justify-content: flex-end;
       }
     }
   }
