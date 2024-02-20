@@ -1,6 +1,7 @@
 <script>
 import AppButton from "./AppButton.vue";
 import AppCard from "./AppCard.vue";
+import AppSlider from "./AppSlider.vue";
 
 import { store } from "../store/store.js";
 
@@ -37,7 +38,7 @@ export default {
       },
     };
   },
-  components: { AppButton, AppCard },
+  components: { AppButton, AppCard, AppSlider },
 };
 </script>
 
@@ -216,6 +217,12 @@ export default {
         </div>
       </div>
     </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">Testimonials</h2>
+      <p>Here's what our happy drivers had to say about our services</p>
+      <AppSlider />
+    </section>
   </main>
 </template>
 
@@ -235,6 +242,7 @@ main {
     color: $title-txt-color;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    font-weight: bold;
   }
   .card-custom {
     position: absolute;
@@ -359,5 +367,36 @@ main {
   top: -120px;
   display: flex;
   justify-content: center;
+}
+
+.instructors {
+  margin-bottom: -100px;
+}
+.testimonials {
+  background-image: url("../assets/img/backgrounds/testimonial-background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 800px;
+  @include center-vertically;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-container {
+    width: 100%;
+
+    .slide-container {
+      height: 100%;
+    }
+  }
 }
 </style>

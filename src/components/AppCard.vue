@@ -112,12 +112,13 @@ export default {
         font-size: 1.7rem;
         color: $title-txt-color;
         margin-top: 2rem;
+        font-weight: bold;
       }
     }
 
     .socials {
       display: flex;
-      gap: 1rem;
+      gap: 10px;
       color: $txt-color;
     }
 

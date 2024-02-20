@@ -81,9 +81,39 @@ export const store = reactive({
           "fa-brands fa-x-twitter",
           "fa-brands fa-instagram",
         ],
-        title: "Angela",
+        title: "Angela Hart",
         text: "lorem ipsum dolor sit amet, consectetur adiscipling elit.",
       },
     ],
   },
+
+  testimonials: [
+    {
+      img: "../assets/img/testimonials/testimonial-sophia.png",
+      name: "Sophia James",
+      text: "Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended",
+    },
+    {
+      img: "../assets/img/testimonials/testimonial-grant.png",
+      name: "Grant Smith",
+      text: "Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended",
+    },
+    {
+      img: "../assets/img/testimonials/testimonial-harold.png",
+      name: "Harold Cameron",
+      text: "Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended",
+    },
+    {
+      img: "../assets/img/testimonials/testimonial-kate.png",
+      name: "Kate Williams",
+      text: "Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended",
+    },
+    {
+      img: "../assets/img/testimonials/testimonial-kelly.png",
+      name: "Kelly Jones",
+      text: "Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended",
+    },
+  ],
+
+  slideActive: 0,
 });

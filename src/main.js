@@ -18,6 +18,7 @@ import {
   faHouseChimney,
   faLink,
   faChevronUp,
+  faCircle as fasCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -29,6 +30,7 @@ import {
   faEnvelope,
   faCircleRight,
   faCopyright,
+  faCircle as farCircle,
 } from "@fortawesome/free-regular-svg-icons";
 
 /* add icons to the library */
@@ -43,7 +45,9 @@ library.add(
   faYoutube,
   faEnvelope,
   faCircleRight,
-  faCopyright
+  faCopyright,
+  fasCircle,
+  farCircle
 );
 
 const app = createApp(App);
