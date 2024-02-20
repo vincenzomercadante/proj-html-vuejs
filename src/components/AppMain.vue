@@ -39,6 +39,12 @@ export default {
     };
   },
   components: { AppButton, AppCard, AppSlider },
+
+  methods: {
+    getUrl(path) {
+      return new URL(path, import.meta.url).href;
+    },
+  },
 };
 </script>
 
@@ -223,6 +229,14 @@ export default {
       <p>Here's what our happy drivers had to say about our services</p>
       <AppSlider />
     </section>
+
+    <section class="latest-news">
+      <div class="container">
+        <h2 class="section-title text-center">Latest News</h2>
+        <div class="row"></div>
+        <AppButton :button="mainContent.moreBlog" />
+      </div>
+    </section>
   </main>
 </template>
 
@@ -308,7 +322,7 @@ main {
       font-size: 2rem;
       font-weight: normal;
       @include center-vertically;
-      justify-content: flex-end;
+      justify-content: center;
     }
   }
 }
@@ -397,6 +411,25 @@ main {
     .slide-container {
       height: 100%;
     }
+  }
+}
+
+.latest-news {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url("../assets/img/backgrounds/latestnews-background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+
+  .container {
+    position: absolute;
+    top: -50px;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color;
+    border-radius: 10px;
   }
 }
 </style>

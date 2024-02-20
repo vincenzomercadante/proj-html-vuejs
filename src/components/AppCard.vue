@@ -16,7 +16,8 @@ export default {
     },
 
     progressValue(rate) {
-      return `linear-gradient(#7abc64 ${rate}%, #f6f6f6 0)`;
+      if (rate == 0) rate = 1;
+      return `conic-gradient(#7abc64 ${rate}% , #f6f6f6 ${rate}%)`;
     },
   },
 };
@@ -33,7 +34,13 @@ export default {
     />
 
     <!-- card progress bar -->
-    <div v-else class="progress-bar" :style="progressValue(card.rate)">
+    <div
+      v-else
+      class="progress-bar"
+      :style="{
+        background: progressValue(card.rate),
+      }"
+    >
       <div class="progress">{{ card.rate }}%</div>
     </div>
 
