@@ -250,6 +250,22 @@ export default {
         />
       </div>
     </section>
+
+    <section class="newsletter">
+      <div class="container text-center">
+        <h2 class="section-title">Sign up to our Newsletter</h2>
+        <div class="row justify-content-center">
+          <div class="col-7 d-flex flex-column">
+            <input type="email" id="" />
+            <AppButton :button="mainContent.subscribe" />
+            <p class="mt-5">
+              (We do not share your data with anybody, and only use it for its
+              intended purpose)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -282,6 +298,15 @@ main {
     font-size: 1.5rem;
   }
 
+  input {
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: 1px solid $input-color;
+    border-radius: 5px;
+    color: $input-color;
+    background-color: $input-bg;
+  }
   // first lesson sessione
   .first-lesson {
     padding: 100px 0 150px 0;
@@ -303,16 +328,6 @@ main {
 
       p {
         margin-bottom: 2rem;
-      }
-
-      input {
-        margin-bottom: 2rem;
-        width: 100%;
-        padding: 1rem 0.5rem;
-        border: 1px solid $input-color;
-        border-radius: 5px;
-        color: $input-color;
-        background-color: $input-bg;
       }
     }
   }
@@ -446,6 +461,22 @@ main {
       border-top-left-radius: 10px;
       box-shadow: 0px -8px 0px 0px $latest-news-shadow;
     }
+  }
+}
+
+.newsletter {
+  padding: 75px 0;
+  background-image: url("../assets/img/backgrounds/newsletter_background.jpg");
+  background-size: cover;
+  min-height: 300px;
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $txt-color;
   }
 }
 </style>
