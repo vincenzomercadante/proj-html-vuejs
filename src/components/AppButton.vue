@@ -3,8 +3,6 @@ export default {
   props: {
     button: Object,
   },
-
-  emits: {},
 };
 </script>
 

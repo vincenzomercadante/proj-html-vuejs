@@ -2,13 +2,11 @@
 import AppButton from "./AppButton.vue";
 
 export default {
-  components: { AppButton, AppButton },
+  components: { AppButton },
 
   props: {
     card: Object,
   },
-
-  computed: {},
 
   methods: {
     /**
@@ -47,7 +45,7 @@ export default {
 
     <!-- card progress bar -->
     <div
-      v-else
+      v-if="card.argument == 'rate'"
       class="progress-bar"
       :style="{
         background: progressValue(card.rate),
