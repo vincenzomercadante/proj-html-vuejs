@@ -58,7 +58,7 @@ export default {
                 class="d-flex mb-4"
               >
                 <font-awesome-icon :icon="detail.icon" class="icons" />
-                <p class="ms-4">{{ detail.txt }}</p>
+                <a href="detail.href" class="ms-4">{{ detail.txt }}</a>
               </li>
             </ul>
           </div>
@@ -71,7 +71,7 @@ export default {
               <!-- course -->
               <li v-for="course in footerItems.courses" class="mb-4">
                 <font-awesome-icon :icon="course.icon" class="icons" />
-                <p class="ms-4">{{ course.txt }}</p>
+                <a :href="course.href" class="ms-4">{{ course.txt }}</a>
               </li>
             </ul>
           </div>
@@ -105,11 +105,9 @@ export default {
 
         <!-- credits left -->
         <div class="credits-left">
-          <font-awesome-icon
-            v-for="brand in footerItems.creditsBrands"
-            :icon="brand"
-            class="ms-3"
-          />
+          <a href="#" v-for="brand in footerItems.creditsBrands"
+            ><font-awesome-icon :icon="brand" class="ms-3"
+          /></a>
         </div>
 
         <!-- chevron up toggle -->
@@ -153,11 +151,12 @@ footer {
         color: $footer-icon-color;
         font-size: 1.2rem;
       }
-      p {
+      a {
         padding-right: 2rem;
+        color: $txt-color;
 
-        a {
-          text-decoration: none;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -168,9 +167,13 @@ footer {
         align-items: center;
 
         .icons,
-        p {
+        a {
           color: $primary-color;
           font-size: 1.2rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -185,6 +188,10 @@ footer {
       font-size: 0.8rem;
       a {
         color: $primary-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
     .credits-left {
