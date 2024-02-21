@@ -18,7 +18,7 @@ export default {
 @use "../styles/partials/variables" as *;
 .btn-custom {
   display: inline-block;
-  padding: 12px 2rem;
+  padding: 5px 2rem;
   border-radius: 30px;
   color: $secondary-color;
   text-align: center;

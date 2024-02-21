@@ -10,25 +10,40 @@ export default {
   },
 
   methods: {
+    /**
+     *
+     * @param {String} path image path to get absolute path
+     * @returns absolute URL from path
+     *
+     */
     getUrl(path) {
       return new URL(path, import.meta.url).href;
     },
 
+    /**
+     *
+     * @param {Number} index new active index
+     *
+     */
     goToSlide(index) {
       store.slideActive = index;
     },
 
+    // go to the next slide
     nextSlide() {
       if (store.slideActive === store.testimonials.length - 1)
         store.slideActive = 0;
       else store.slideActive++;
     },
 
+    // go to the next slide every 3000ms
     startInterval() {
       this.clock = setInterval(() => {
         this.nextSlide();
       }, 3000);
     },
+
+    // stop change interval
     stopInterval() {
       clearInterval(this.clock);
     },
@@ -44,22 +59,29 @@ export default {
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-8">
+        <!-- carousel container -->
         <div
           class="carousel-container"
           @mouseleave="startInterval()"
           @mouseover="stopInterval()"
         >
+          <!-- slides container -->
           <div class="slide-container">
+            <!-- slides -->
             <div
               v-for="(testimonial, index) in store.testimonials"
               class="slide"
               :class="index === store.slideActive ? 'active' : ''"
             >
+              <!-- slide img -->
               <img :src="getUrl(testimonial.img)" alt="testimonial image" />
+              <!-- slide text -->
               <p>{{ testimonial.text }}</p>
+              <!-- slide title -->
               <h3>{{ testimonial.name }}</h3>
             </div>
           </div>
+          <!-- slider dots -->
           <div class="dot-container">
             <font-awesome-icon
               v-for="(dot, index) in store.testimonials.length"

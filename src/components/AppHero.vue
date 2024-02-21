@@ -12,7 +12,9 @@ export default {
 <template>
   <section>
     <div class="container">
+      <!-- hero title -->
       <h1 class="display-3">{{ title }}</h1>
+      <!-- hero subtitle -->
       <h2>{{ subtitle }}</h2>
     </div>
   </section>

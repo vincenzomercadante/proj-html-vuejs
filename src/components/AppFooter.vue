@@ -17,6 +17,12 @@ export default {
   components: { AppButton },
 
   methods: {
+    /**
+     *
+     * @param {String} path image path to get absolute path
+     * @returns absolute URL from path
+     *
+     */
     getUrl(path) {
       return new URL(path, import.meta.url).href;
     },
@@ -29,17 +35,24 @@ export default {
     <section class="links">
       <div class="container">
         <div class="row">
+          <!-- site logo col -->
           <div class="col-3 pt-3">
+            <!-- site logo -->
             <img :src="getUrl(store.appLogo)" alt="" class="img-fluid" />
+            <!-- footer paragraph -->
             <p class="mt-3">
               Avada Driving School is the right choice for experienced drivers
               looking for a refresher course, or the brand new driver wanting to
               pass time
             </p>
           </div>
+
+          <!-- contact details col -->
           <div class="col-3">
+            <!-- col title -->
             <h3>contact details</h3>
             <ul class="details">
+              <!-- contact item -->
               <li
                 v-for="detail in footerItems.contactDetails"
                 class="d-flex mb-4"
@@ -49,29 +62,39 @@ export default {
               </li>
             </ul>
           </div>
+
+          <!-- courses col -->
           <div class="col-3">
+            <!-- col title -->
             <h3>courses</h3>
             <ul class="courses">
+              <!-- course -->
               <li v-for="course in footerItems.courses" class="mb-4">
                 <font-awesome-icon :icon="course.icon" class="icons" />
                 <p class="ms-4">{{ course.txt }}</p>
               </li>
             </ul>
           </div>
+
+          <!-- book col -->
           <div class="col-3 text-center">
+            <!-- book image -->
             <img
               :src="getUrl('../assets/img/footer/footer-ad-grid.png')"
               alt=""
               class="img-fluid mb-4"
             />
+            <!-- book button -->
             <AppButton :button="footerItems.button" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- credits section -->
     <section class="credits">
       <div class="container d-flex justify-content-between align-items-center">
+        <!-- credits right -->
         <div class="credits-right d-flex align-items-center">
           <font-awesome-icon icon="fa-regular fa-copyright" />
           <p class="mb-0 ms-1">
@@ -80,6 +103,7 @@ export default {
           </p>
         </div>
 
+        <!-- credits left -->
         <div class="credits-left">
           <font-awesome-icon
             v-for="brand in footerItems.creditsBrands"
@@ -88,6 +112,7 @@ export default {
           />
         </div>
 
+        <!-- chevron up toggle -->
         <a href="#" class="go-up">
           <font-awesome-icon icon="fa-solid fa-chevron-up" />
         </a>

@@ -42,6 +42,12 @@ export default {
   components: { AppButton, AppCard, AppSlider, AppNews },
 
   methods: {
+    /**
+     *
+     * @param {String} path image path to get absolute path
+     * @returns absolute URL from path
+     *
+     */
     getUrl(path) {
       return new URL(path, import.meta.url).href;
     },
@@ -124,11 +130,14 @@ export default {
       </div>
     </section>
 
+    <!-- start now section -->
     <section class="start-now">
       <div class="container">
         <div class="row">
           <div class="col-8">
+            <!-- title hero -->
             <h2>Start Learning to Drive Today</h2>
+            <!-- subtitle -->
             <h3>Give us a call to schedule your first driving lesson</h3>
           </div>
           <div class="col-4">
@@ -146,12 +155,16 @@ export default {
       <div class="container">
         <div class="row">
           <div class="col-5">
+            <!-- info card -->
             <div class="card-custom course">
               <div class="card-content">
+                <!-- new item image on image -->
                 <figure>
                   <img src="../assets/img/new-corner.jpg" alt="" />
                 </figure>
+                <!-- section title -->
                 <h3 class="section-title">Courses</h3>
+                <!-- card paragraph -->
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
                   magni delectus, voluptatum eum placeat vitae soluta corrupti,
@@ -164,12 +177,14 @@ export default {
             </div>
           </div>
 
+          <!-- card generetor -->
           <div class="col-7">
             <AppCard v-for="card in store.mainCard.courseCards" :card="card" />
           </div>
         </div>
       </div>
     </section>
+    <!-- triangle svg -->
     <svg
       class="fusion-big-triangle-candy"
       xmlns="http://www.w3.org/2000/svg"
@@ -189,23 +204,27 @@ export default {
       </defs>
     </svg>
 
-    <!-- rating -->
+    <!-- rating section-->
     <section class="rating">
       <div class="container">
         <div class="row gx-3">
+          <!-- col cards generator -->
           <div class="col-4" v-for="card in store.mainCard.ratingCards">
+            <!-- card -->
             <AppCard :card="card" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- your instructors -->
+    <!-- instructors section -->
     <section class="instructors">
       <div class="container">
+        <!-- section title -->
         <h2 class="section-title">Your instructors</h2>
         <div class="row">
           <div class="col-9">
+            <!-- section paragraph -->
             <p class="txt-big">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
               nulla ullam fugit officia consequatur aut molestias, perferendis,
@@ -213,11 +232,13 @@ export default {
               tempora quisquam soluta nesciunt.
             </p>
           </div>
+          <!-- button -->
           <div class="col-3 text-center">
             <AppButton :button="mainContent.moreAboutUs" />
           </div>
         </div>
         <div class="row mt-5">
+          <!-- col card generator -->
           <div class="col-4" v-for="card in store.mainCard.instructorsCards">
             <AppCard :card="card" />
           </div>
@@ -225,39 +246,55 @@ export default {
       </div>
     </section>
 
+    <!-- testimonials section -->
     <section class="testimonials">
+      <!-- section title -->
       <h2 class="section-title">Testimonials</h2>
-      <p>Here's what our happy drivers had to say about our services</p>
+      <!-- section paragraph -->
+      <p class="txt-big">
+        Here's what our happy drivers had to say about our services
+      </p>
+      <!-- testimonial carousel -->
       <AppSlider />
     </section>
 
+    <!-- latest news section -->
     <section class="latest-news">
       <div class="section-wrapper">
         <div class="container">
+          <!-- section title -->
           <h2 class="section-title text-center">Latest News</h2>
           <div class="row mb-5">
+            <!-- news generator -->
             <div class="col-6" v-for="news in store.mainCard.mainNews">
               <AppNews :news="news" />
             </div>
           </div>
+          <!-- section button -->
           <AppButton :button="mainContent.moreBlog" />
         </div>
+        <!-- triangle image -->
         <img
           :src="
             getUrl('../assets/img/latest news/latestnews-bottom-1200x105.png')
           "
-          alt=""
+          alt="triangle"
         />
       </div>
     </section>
 
+    <!-- newsletter section -->
     <section class="newsletter">
       <div class="container text-center">
+        <!-- section title -->
         <h2 class="section-title">Sign up to our Newsletter</h2>
         <div class="row justify-content-center">
           <div class="col-7 d-flex flex-column">
-            <input type="email" id="" />
+            <!-- input email -->
+            <input type="email" id="email" name="user mail" />
+            <!-- section button -->
             <AppButton :button="mainContent.subscribe" />
+            <!-- section paragraph -->
             <p class="mt-5">
               (We do not share your data with anybody, and only use it for its
               intended purpose)
@@ -404,6 +441,7 @@ main {
   stop-color: #e6eaed;
 }
 
+// rating section
 .rating {
   position: relative;
   top: -120px;
@@ -411,9 +449,12 @@ main {
   justify-content: center;
 }
 
+// instructor section
 .instructors {
   margin-bottom: -100px;
 }
+
+// testimonials section
 .testimonials {
   background-image: url("../assets/img/backgrounds/testimonial-background.jpg");
   background-size: cover;
@@ -422,10 +463,6 @@ main {
   @include center-vertically;
   flex-direction: column;
   justify-content: center;
-
-  p {
-    font-size: 1.5rem;
-  }
 
   .container {
     display: flex;
@@ -442,6 +479,7 @@ main {
   }
 }
 
+// latest-news section
 .latest-news {
   display: flex;
   justify-content: center;
@@ -464,11 +502,11 @@ main {
   }
 }
 
+// newsletter section
 .newsletter {
   padding: 75px 0;
   background-image: url("../assets/img/backgrounds/newsletter_background.jpg");
   background-size: cover;
-  min-height: 300px;
 
   .section-title {
     font-size: 2rem;

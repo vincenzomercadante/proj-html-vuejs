@@ -11,10 +11,22 @@ export default {
   computed: {},
 
   methods: {
+    /**
+     *
+     * @param {String} path image path to get absolute path
+     * @returns absolute URL from path
+     *
+     */
     generateUrl(path) {
       return new URL(path, import.meta.url).href;
     },
 
+    /**
+     *
+     * @param {Number} rate progress percentage
+     * @returns value for the conic gradient color for the progress bar
+     *
+     */
     progressValue(rate) {
       if (rate == 0) rate = 1;
       return `conic-gradient(#7abc64 ${rate}% , #f6f6f6 ${rate}%)`;
@@ -92,7 +104,6 @@ export default {
       position: relative;
       @include center-vertically;
       justify-content: center;
-      background: conic-gradient($primary-color, #f6f6f6 0);
       width: 80%;
       aspect-ratio: 1;
       border-radius: 50%;

@@ -20,10 +20,22 @@ export default {
   },
 
   methods: {
+    /**
+     *
+     * @param {String} path image path to get absolute path
+     * @returns absolute URL from path
+     *
+     */
     generateUrl(path) {
       return new URL(path, import.meta.url).href;
     },
 
+    /**
+     *
+     * @param {Number} index new active menu
+     * @returns absolute URL from path
+     *
+     */
     changeActiveMenu(index) {
       store.menuActive = index;
     },
@@ -80,7 +92,9 @@ export default {
     <!-- App hero section -->
     <AppHero />
 
+    <!-- page badges -->
     <div class="badges">
+      <!-- first badge -->
       <div class="badge">
         <svg
           class="fss-after"
@@ -104,6 +118,7 @@ export default {
         </svg>
         <span class="badge-title">Demos</span>
       </div>
+      <!-- second badge -->
       <div class="badge">
         <h3><span class="d-inline-block fs-5 align-top">$</span>39</h3>
         <span class="badge-title">On Sale</span>
