@@ -69,53 +69,106 @@ export default {
         </div>
       </div>
     </section>
+
+    <section class="credits">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="credits-right d-flex align-items-center">
+          <font-awesome-icon icon="fa-regular fa-copyright" />
+          <p class="mb-0 ms-1">
+            Copyright 2012 - 2020 | Avada Theme by <a href="#">ThemeFusion</a> |
+            All Rights Reserved by <a href="#">ThemeFusion</a>
+          </p>
+        </div>
+
+        <div class="credits-left">
+          <font-awesome-icon
+            v-for="brand in footerItems.creditsBrands"
+            :icon="brand"
+            class="ms-3"
+          />
+        </div>
+
+        <a href="#" class="go-up">
+          <font-awesome-icon icon="fa-solid fa-chevron-up" />
+        </a>
+      </div>
+    </section>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
-.links {
-  padding: 50px 0;
-  background-image: url("../assets/img/backgrounds/footer-background-color.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
+footer {
+  position: relative;
 
-  p {
-    color: $txt-color;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-  }
+  .links {
+    padding: 50px 0;
+    background-image: url("../assets/img/backgrounds/footer-background-color.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
 
-  h3 {
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $secondary-color;
-    font-size: 1rem;
-  }
-
-  li {
-    .icons {
-      color: $footer-icon-color;
-      font-size: 1.2rem;
-    }
     p {
-      padding-right: 2rem;
+      color: $txt-color;
+      font-size: 0.9rem;
+      margin-bottom: 0;
     }
-  }
 
-  .courses {
+    h3 {
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $secondary-color;
+      font-size: 1rem;
+    }
+
     li {
-      display: flex;
-      align-items: center;
-
-      .icons,
-      p {
-        color: $primary-color;
+      .icons {
+        color: $footer-icon-color;
         font-size: 1.2rem;
       }
+      p {
+        padding-right: 2rem;
+      }
+    }
+
+    .courses {
+      li {
+        display: flex;
+        align-items: center;
+
+        .icons,
+        p {
+          color: $primary-color;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .credits {
+    padding: 50px 0;
+    background-color: $footer-credits-bg;
+
+    .credits-right {
+      color: $txt-color;
+      font-size: 0.8rem;
+      a {
+        color: $primary-color;
+      }
+    }
+    .credits-left {
+      color: $secondary-color;
+    }
+
+    .go-up {
+      position: absolute;
+      background-color: $chevron-up-bg;
+      color: $secondary-color;
+      padding: 5px 1rem;
+      bottom: 0;
+      right: 70px;
     }
   }
 }

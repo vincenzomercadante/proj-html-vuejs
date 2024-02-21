@@ -105,6 +105,13 @@ export default {
           href: "#",
           type: "primary",
         },
+
+        creditsBrands: [
+          "fa-brands fa-facebook-f",
+          "fa-brands fa-x-twitter",
+          "fa-brands fa-youtube",
+          "fa-brands fa-instagram",
+        ],
       },
     };
   },
