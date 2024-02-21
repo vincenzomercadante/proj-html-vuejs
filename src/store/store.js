@@ -135,4 +135,5 @@ export const store = reactive({
   ],
 
   slideActive: 0,
+  menuActive: 0,
 });

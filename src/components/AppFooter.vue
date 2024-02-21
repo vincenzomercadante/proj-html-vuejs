@@ -76,7 +76,7 @@ export default {
           <font-awesome-icon icon="fa-regular fa-copyright" />
           <p class="mb-0 ms-1">
             Copyright 2012 - 2020 | Avada Theme by <a href="#">ThemeFusion</a> |
-            All Rights Reserved by <a href="#">ThemeFusion</a>
+            All Rights Reserved by <a href="#">WordPress</a>
           </p>
         </div>
 
@@ -130,6 +130,10 @@ footer {
       }
       p {
         padding-right: 2rem;
+
+        a {
+          text-decoration: none;
+        }
       }
     }
 

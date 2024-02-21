@@ -1,9 +1,16 @@
 <script>
+import { store } from "../store/store";
 import AppButton from "./AppButton.vue";
 import AppHero from "./AppHero.vue";
 import NavBadge from "./NavBadge.vue";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
   components: { AppButton, AppHero, NavBadge },
 
   props: {
@@ -15,6 +22,10 @@ export default {
   methods: {
     generateUrl(path) {
       return new URL(path, import.meta.url).href;
+    },
+
+    changeActiveMenu(index) {
+      store.menuActive = index;
     },
   },
 };
@@ -46,9 +57,10 @@ export default {
             <ul>
               <!-- text links -->
               <li
-                v-for="link in links"
+                v-for="(link, index) in links"
                 class="me-5"
-                :class="link.active ? 'active' : ''"
+                :class="index === store.menuActive ? 'active' : ''"
+                @click="changeActiveMenu(index)"
               >
                 <!-- text -->
                 <a :href="link.href" class="me-1">{{ link.linkName }}</a>
@@ -105,6 +117,7 @@ header {
 
       li {
         padding-bottom: 5px;
+        cursor: pointer;
       }
       li.active {
         color: $primary-color;
