@@ -1,26 +1,28 @@
 import { reactive } from "vue";
 
 export const store = reactive({
+  appLogo: "../assets/img/site logo/avada-drivers-logo-1x.png",
+
   mainCard: {
     courseCards: [
       {
         type: "small-card",
         argument: "course",
-        img: "../assets/img/course-intensive-200x200.jpg",
+        img: "../assets/img/courses/course-intensive-200x200.jpg",
         title: "Pass Plus",
         button: { text: "learn more", href: "#", type: "secondary" },
       },
       {
         type: "small-card",
         argument: "course",
-        img: "../assets/img/courses-passplus-200x200.jpg",
+        img: "../assets/img/courses/courses-passplus-200x200.jpg",
         title: "Intensive Course",
         button: { text: "learn more", href: "#", type: "secondary" },
       },
       {
         type: "small-card",
         argument: "course",
-        img: "../assets/img/courses-instructor-200x200.jpg",
+        img: "../assets/img/courses/courses-instructor-200x200.jpg",
         title: "Instructors",
         button: { text: "learn more", href: "#", type: "secondary" },
       },

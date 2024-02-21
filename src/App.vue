@@ -53,6 +53,59 @@ export default {
           type: "primary",
         },
       },
+
+      footerItems: {
+        contactDetails: [
+          {
+            txt: "12345 North Main Street, New York, Ny 555555",
+            icon: "fa-solid fa-house-chimney",
+            href: "#",
+          },
+          {
+            txt: "1.800.555.678",
+            icon: "fa-solid fa-phone-flip",
+            href: "#",
+          },
+          {
+            txt: "info@your-domain.com",
+            icon: "fa-regular fa-envelope",
+            href: "#",
+          },
+          {
+            txt: "Theme-Fusion.com",
+            icon: "fa-solid fa-link",
+            href: "#",
+          },
+        ],
+
+        courses: [
+          {
+            txt: "Pass Plus",
+            icon: "fa-regular fa-circle-right",
+            href: "#",
+          },
+          {
+            txt: "Intensive Course",
+            icon: "fa-regular fa-circle-right",
+            href: "#",
+          },
+          {
+            txt: "Automatic",
+            icon: "fa-regular fa-circle-right",
+            href: "#",
+          },
+          {
+            txt: "Instructor Training",
+            icon: "fa-regular fa-circle-right",
+            href: "#",
+          },
+        ],
+        button: {
+          text: "book now",
+          href: "#",
+          type: "primary",
+        },
+      },
     };
   },
 
@@ -72,7 +125,7 @@ export default {
     :button="headerItems.button"
   />
   <AppMain />
-  <AppFooter />
+  <AppFooter :footerItems="footerItems" />
 </template>
 
 <style lang="scss">
