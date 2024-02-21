@@ -85,6 +85,23 @@ export const store = reactive({
         text: "lorem ipsum dolor sit amet, consectetur adiscipling elit.",
       },
     ],
+
+    mainNews: [
+      {
+        img: "../assets/img/latest news/blog-choosecar-700x441.jpg",
+        title: "What Car to Start With?",
+        date: "February 7th, 2019",
+        comments: [],
+        preview: "Lorem ipsum dolor sit amet, consectetur adisciping",
+      },
+      {
+        img: "../assets/img/latest news/blogpost-10and2-700x441.jpg",
+        title: "What Car to Start With?",
+        date: "February 7th, 2019",
+        comments: [],
+        preview: "Lorem ipsum dolor sit amet, consectetur adisciping",
+      },
+    ],
   },
 
   testimonials: [

@@ -2,6 +2,7 @@
 import AppButton from "./AppButton.vue";
 import AppCard from "./AppCard.vue";
 import AppSlider from "./AppSlider.vue";
+import AppNews from "./AppNews.vue";
 
 import { store } from "../store/store.js";
 
@@ -38,7 +39,7 @@ export default {
       },
     };
   },
-  components: { AppButton, AppCard, AppSlider },
+  components: { AppButton, AppCard, AppSlider, AppNews },
 
   methods: {
     getUrl(path) {
@@ -231,10 +232,22 @@ export default {
     </section>
 
     <section class="latest-news">
-      <div class="container">
-        <h2 class="section-title text-center">Latest News</h2>
-        <div class="row"></div>
-        <AppButton :button="mainContent.moreBlog" />
+      <div class="section-wrapper">
+        <div class="container">
+          <h2 class="section-title text-center">Latest News</h2>
+          <div class="row mb-5">
+            <div class="col-6" v-for="news in store.mainCard.mainNews">
+              <AppNews :news="news" />
+            </div>
+          </div>
+          <AppButton :button="mainContent.moreBlog" />
+        </div>
+        <img
+          :src="
+            getUrl('../assets/img/latest news/latestnews-bottom-1200x105.png')
+          "
+          alt=""
+        />
       </div>
     </section>
   </main>
@@ -417,19 +430,22 @@ main {
 .latest-news {
   display: flex;
   justify-content: center;
-  position: relative;
   background-image: url("../assets/img/backgrounds/latestnews-background.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 600px;
 
-  .container {
-    position: absolute;
+  .section-wrapper {
+    position: relative;
     top: -50px;
-    flex-direction: column;
-    align-items: center;
-    background-color: $secondary-color;
-    border-radius: 10px;
+    .container {
+      @include center-vertically;
+      flex-direction: column;
+      padding: 3rem 3rem 1rem 3rem;
+      background-color: $secondary-color;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      box-shadow: 0px -8px 0px 0px $latest-news-shadow;
+    }
   }
 }
 </style>
